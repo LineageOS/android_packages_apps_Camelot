@@ -17,9 +17,8 @@ import androidx.pdf.viewer.fragment.PdfViewerFragment
 
 class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
     // Fragment
-    @SuppressLint("NewApi")
-    private val pdfViewerFragment = PdfViewerFragment().apply {
-        isTextSearchActive = true
+    private val pdfViewerFragment by lazy {
+        supportFragmentManager.findFragmentById(R.id.pdf_viewer) as PdfViewerFragment
     }
 
     // Intents
@@ -39,10 +38,6 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, pdfViewerFragment)
-            .commit()
 
         addOnNewIntentListener(intentListener)
         intentListener.accept(intent)

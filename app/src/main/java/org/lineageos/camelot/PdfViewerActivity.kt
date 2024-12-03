@@ -31,8 +31,8 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
 
     // Intents
     private val intentListener = Consumer<Intent> { intent ->
-        intent.data?.let {
-            pdfViewerFragment.documentUri = it
+        intent.data?.let { uri ->
+            pdfViewerFragment.documentUri = uri
         }
     }
 
@@ -60,11 +60,29 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
+            R.id.action_find_in_page -> {
+                pdfViewerFragment.isTextSearchActive = true
+                true
+            }
+
+            R.id.action_send -> {
+                startActivity(
+                    Intent.createChooser(
+                        Intent(Intent.ACTION_SEND).apply {
+                            flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
+                            putExtra(Intent.EXTRA_STREAM, pdfViewerFragment.documentUri)
+                            type = "application/pdf"
+                        },
+                        getString(R.string.send)
+                    )
+                )
+                true
+            }
+
             R.id.action_open_with -> {
                 startActivity(
                     Intent.createChooser(
-                        Intent().apply {
-                            action = Intent.ACTION_VIEW
+                        Intent(Intent.ACTION_VIEW).apply {
                             flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
                             setDataAndType(pdfViewerFragment.documentUri, "application/pdf")
                         },
@@ -74,7 +92,22 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
                 true
             }
 
-            else -> return super.onOptionsItemSelected(item)
+            R.id.action_download -> {
+                startActivity(
+                    Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
+                        addCategory(Intent.CATEGORY_OPENABLE)
+                        type = "application/pdf"
+                    }
+                )
+                true
+            }
+
+            R.id.action_print -> {
+                // TODO: Implement printing
+                true
+            }
+
+            else -> super.onOptionsItemSelected(item)
         }
     }
 }

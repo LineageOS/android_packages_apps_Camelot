@@ -18,7 +18,9 @@ import androidx.pdf.viewer.fragment.PdfViewerFragment
 class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
     // Fragment
     @SuppressLint("NewApi")
-    private val pdfViewerFragment = PdfViewerFragment()
+    private val pdfViewerFragment = PdfViewerFragment().apply {
+        isTextSearchActive = true
+    }
 
     // Intents
     private val intentListener = Consumer<Intent> { intent ->

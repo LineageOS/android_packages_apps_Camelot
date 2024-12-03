@@ -6,6 +6,7 @@
 package org.lineageos.camelot
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.print.PrintAttributes
@@ -35,14 +36,19 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
         )
     }
 
+    // Document URI
+    private var pdfUri: Uri?
+        get() = pdfViewerFragment.documentUri
+        set(value) {
+            pdfViewerFragment.documentUri = value
+        }
+
     // Intents
     private val intentListener = Consumer<Intent> { intent ->
-        intent.data?.let { uri ->
-            pdfViewerFragment.documentUri = uri
+        intent.data?.let {
+            pdfUri = it
         }
     }
-
-    private val pdfUri get() = pdfViewerFragment.documentUri
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -76,7 +82,7 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
                 Intent.createChooser(
                     Intent(Intent.ACTION_SEND).apply {
                         flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
-                        setDataAndType(pdfViewerFragment.documentUri, MIME_TYPE_PDF)
+                        setDataAndType(pdfUri, MIME_TYPE_PDF)
                     },
                     getString(R.string.send)
                 )
@@ -89,7 +95,7 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
                 Intent.createChooser(
                     Intent(Intent.ACTION_VIEW).apply {
                         flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
-                        setDataAndType(pdfViewerFragment.documentUri, MIME_TYPE_PDF)
+                        setDataAndType(pdfUri, MIME_TYPE_PDF)
                     },
                     getString(R.string.open_with)
                 )

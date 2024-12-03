@@ -58,56 +58,58 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.action_find_in_page -> {
-                pdfViewerFragment.isTextSearchActive = true
-                true
-            }
-
-            R.id.action_send -> {
-                startActivity(
-                    Intent.createChooser(
-                        Intent(Intent.ACTION_SEND).apply {
-                            flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
-                            putExtra(Intent.EXTRA_STREAM, pdfViewerFragment.documentUri)
-                            type = "application/pdf"
-                        },
-                        getString(R.string.send)
-                    )
-                )
-                true
-            }
-
-            R.id.action_open_with -> {
-                startActivity(
-                    Intent.createChooser(
-                        Intent(Intent.ACTION_VIEW).apply {
-                            flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
-                            setDataAndType(pdfViewerFragment.documentUri, "application/pdf")
-                        },
-                        getString(R.string.open_with)
-                    )
-                )
-                true
-            }
-
-            R.id.action_download -> {
-                startActivity(
-                    Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
-                        addCategory(Intent.CATEGORY_OPENABLE)
-                        type = "application/pdf"
-                    }
-                )
-                true
-            }
-
-            R.id.action_print -> {
-                // TODO: Implement printing
-                true
-            }
-
-            else -> super.onOptionsItemSelected(item)
+    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+        R.id.action_find_in_page -> {
+            pdfViewerFragment.isTextSearchActive = true
+            true
         }
+
+        R.id.action_send -> {
+            startActivity(
+                Intent.createChooser(
+                    Intent(Intent.ACTION_SEND).apply {
+                        flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
+                        putExtra(Intent.EXTRA_STREAM, pdfViewerFragment.documentUri)
+                        type = MIME_TYPE_PDF
+                    },
+                    getString(R.string.send)
+                )
+            )
+            true
+        }
+
+        R.id.action_open_with -> {
+            startActivity(
+                Intent.createChooser(
+                    Intent(Intent.ACTION_VIEW).apply {
+                        flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
+                        setDataAndType(pdfViewerFragment.documentUri, MIME_TYPE_PDF)
+                    },
+                    getString(R.string.open_with)
+                )
+            )
+            true
+        }
+
+        R.id.action_download -> {
+            startActivity(
+                Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
+                    addCategory(Intent.CATEGORY_OPENABLE)
+                    type = MIME_TYPE_PDF
+                }
+            )
+            true
+        }
+
+        R.id.action_print -> {
+            // TODO: Implement printing
+            true
+        }
+
+        else -> super.onOptionsItemSelected(item)
+    }
+
+    companion object {
+        private const val MIME_TYPE_PDF = "application/pdf"
     }
 }

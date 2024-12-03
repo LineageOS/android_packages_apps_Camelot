@@ -19,6 +19,7 @@ import androidx.core.util.Consumer
 import com.google.android.material.appbar.MaterialToolbar
 import org.lineageos.camelot.fragments.CamelotPdfViewerFragment
 import org.lineageos.camelot.print.CamelotPdfDocumentAdapter
+import kotlin.reflect.cast
 
 @RequiresExtension(extension = Build.VERSION_CODES.S, version = 13)
 class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
@@ -27,9 +28,11 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
 
     // Fragment
     private val pdfViewerFragment by lazy {
-        supportFragmentManager.findFragmentById(
-            R.id.fragmentContainerView
-        ) as CamelotPdfViewerFragment
+        CamelotPdfViewerFragment::class.cast(
+            supportFragmentManager.findFragmentById(
+                R.id.fragmentContainerView
+            )
+        )
     }
 
     // Intents

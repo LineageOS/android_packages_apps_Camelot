@@ -26,7 +26,7 @@ android_app {
         "androidx-constraintlayout_constraintlayout",
         "androidx.core_core-ktx",
         "Camelot_androidx.pdf_pdf-viewer-fragment",
-        "Camelot_com.google.android.material_material",
+        "com.google.android.material_material",
         "kotlin-stdlib",
     ],
 

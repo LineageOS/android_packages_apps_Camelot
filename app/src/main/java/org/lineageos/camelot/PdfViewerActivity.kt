@@ -9,6 +9,7 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresExtension
 import androidx.appcompat.app.AppCompatActivity
@@ -55,5 +56,25 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.pdf_viewer_menu, menu)
         return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_open_with -> {
+                startActivity(
+                    Intent.createChooser(
+                        Intent().apply {
+                            action = Intent.ACTION_VIEW
+                            flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
+                            setDataAndType(pdfViewerFragment.documentUri, "application/pdf")
+                        },
+                        getString(R.string.open_with)
+                    )
+                )
+                true
+            }
+
+            else -> return super.onOptionsItemSelected(item)
+        }
     }
 }

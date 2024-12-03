@@ -14,16 +14,26 @@ import android.print.PrintManager
 import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.annotation.RequiresExtension
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.util.Consumer
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import com.google.android.material.appbar.MaterialToolbar
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 import org.lineageos.camelot.fragments.CamelotPdfViewerFragment
 import org.lineageos.camelot.print.CamelotPdfDocumentAdapter
+import org.lineageos.camelot.viewmodels.PdfViewModel
 import kotlin.reflect.cast
 
 @RequiresExtension(extension = Build.VERSION_CODES.S, version = 13)
 class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
+    // View models
+    private val pdfViewModel by viewModels<PdfViewModel>()
+
     // Views
     private val toolbar by lazy { findViewById<MaterialToolbar>(R.id.toolbar) }
 
@@ -58,6 +68,12 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
 
         addOnNewIntentListener(intentListener)
         intentListener.accept(intent)
+
+        lifecycleScope.launch {
+            lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                loadData()
+            }
+        }
     }
 
     override fun onDestroy() {
@@ -130,6 +146,14 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
         }
 
         else -> super.onOptionsItemSelected(item)
+    }
+
+    private suspend fun loadData() {
+        pdfViewModel.pdfName.collectLatest {
+            it?.also { pdfName ->
+                title = pdfName
+            } ?: setTitle(R.string.app_name)
+        }
     }
 
     companion object {

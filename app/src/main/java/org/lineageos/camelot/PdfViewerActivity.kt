@@ -11,14 +11,18 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.util.Consumer
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.pdf.viewer.fragment.PdfViewerFragment
+import com.google.android.material.appbar.MaterialToolbar
+import org.lineageos.camelot.fragments.CamelotPdfViewerFragment
 
 class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
+    // Views
+    private val toolbar by lazy { findViewById<MaterialToolbar>(R.id.toolbar) }
+
     // Fragment
     private val pdfViewerFragment by lazy {
-        supportFragmentManager.findFragmentById(R.id.pdf_viewer) as PdfViewerFragment
+        supportFragmentManager.findFragmentById(
+            R.id.fragmentContainerView
+        ) as CamelotPdfViewerFragment
     }
 
     // Intents
@@ -33,11 +37,8 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+        setSupportActionBar(toolbar)
+        toolbar.setTitle(R.string.app_name)
 
         addOnNewIntentListener(intentListener)
         intentListener.accept(intent)

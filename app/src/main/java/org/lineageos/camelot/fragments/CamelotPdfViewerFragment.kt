@@ -21,10 +21,10 @@ class CamelotPdfViewerFragment : PdfViewerFragment() {
 
         val fastScrollView = view.findViewById<View>(androidx.pdf.R.id.fast_scroll_view)
 
-        ViewCompat.setOnApplyWindowInsetsListener(fastScrollView) { _, windowInsets ->
+        ViewCompat.setOnApplyWindowInsetsListener(fastScrollView) { v, windowInsets ->
             val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
 
-            fastScrollView.updateMargin(
+            v.updateMargin(
                 insets,
                 bottom = true,
             )

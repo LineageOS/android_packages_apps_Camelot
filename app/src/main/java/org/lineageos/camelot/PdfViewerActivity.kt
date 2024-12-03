@@ -8,6 +8,7 @@ package org.lineageos.camelot
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.util.Consumer
@@ -48,5 +49,10 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
         removeOnNewIntentListener(intentListener)
 
         super.onDestroy()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.pdf_viewer_menu, menu)
+        return true
     }
 }

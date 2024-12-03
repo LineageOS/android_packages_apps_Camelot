@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2024 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_find_in_page"
+        android:icon="@drawable/ic_find_in_page"
+        android:title="@string/find_in_page"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_send"
+        android:title="@string/send"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_open_with"
+        android:title="@string/open_with"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_download"
+        android:title="@string/download"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_print"
+        android:title="@string/print"
+        app:showAsAction="never" />
+</menu>

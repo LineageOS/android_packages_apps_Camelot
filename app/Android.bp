@@ -23,7 +23,6 @@ android_app {
         // DO NOT EDIT THIS SECTION MANUALLY
         "androidx.activity_activity",
         "androidx.appcompat_appcompat",
-        "androidx-constraintlayout_constraintlayout",
         "androidx.core_core-ktx",
         "Camelot_androidx.pdf_pdf-viewer-fragment",
         "com.google.android.material_material",

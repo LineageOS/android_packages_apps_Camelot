@@ -8,6 +8,8 @@ package org.lineageos.camelot
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.print.PrintAttributes
+import android.print.PrintManager
 import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
@@ -16,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.util.Consumer
 import com.google.android.material.appbar.MaterialToolbar
 import org.lineageos.camelot.fragments.CamelotPdfViewerFragment
+import org.lineageos.camelot.print.CamelotPdfDocumentAdapter
 
 @RequiresExtension(extension = Build.VERSION_CODES.S, version = 13)
 class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
@@ -35,6 +38,8 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
             pdfViewerFragment.documentUri = uri
         }
     }
+
+    private val pdfUri get() = pdfViewerFragment.documentUri
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -101,7 +106,18 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
         }
 
         R.id.action_print -> {
-            // TODO: Implement printing
+            pdfUri?.let {
+                contentResolver.openFileDescriptor(it, "r")?.use { fileDescriptor ->
+                    val printManager = getSystemService(PrintManager::class.java)
+
+                    val printDocumentAdapter = CamelotPdfDocumentAdapter(fileDescriptor)
+                    printManager.print(
+                        "PDF Document",
+                        printDocumentAdapter,
+                        PrintAttributes.Builder().build()
+                    )
+                }
+            }
             true
         }
 

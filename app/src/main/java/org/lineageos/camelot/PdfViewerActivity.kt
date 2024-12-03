@@ -41,7 +41,6 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
         enableEdgeToEdge()
 
         setSupportActionBar(toolbar)
-        setTitle(R.string.app_name)
 
         addOnNewIntentListener(intentListener)
         intentListener.accept(intent)

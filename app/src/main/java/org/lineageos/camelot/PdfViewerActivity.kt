@@ -5,16 +5,18 @@
 
 package org.lineageos.camelot
 
-import android.annotation.SuppressLint
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.view.Menu
 import androidx.activity.enableEdgeToEdge
+import androidx.annotation.RequiresExtension
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.util.Consumer
 import com.google.android.material.appbar.MaterialToolbar
 import org.lineageos.camelot.fragments.CamelotPdfViewerFragment
 
+@RequiresExtension(extension = Build.VERSION_CODES.S, version = 13)
 class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
     // Views
     private val toolbar by lazy { findViewById<MaterialToolbar>(R.id.toolbar) }
@@ -29,7 +31,6 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
     // Intents
     private val intentListener = Consumer<Intent> { intent ->
         intent.data?.let {
-            @SuppressLint("NewApi")
             pdfViewerFragment.documentUri = it
         }
     }

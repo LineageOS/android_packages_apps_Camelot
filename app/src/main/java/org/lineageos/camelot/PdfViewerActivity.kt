@@ -98,7 +98,8 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
                 Intent.createChooser(
                     Intent(Intent.ACTION_SEND).apply {
                         flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
-                        setDataAndType(pdfUri, MIME_TYPE_PDF)
+                        type = MIME_TYPE_PDF
+                        putExtra(Intent.EXTRA_STREAM, pdfUri)
                     },
                     getString(R.string.send)
                 )

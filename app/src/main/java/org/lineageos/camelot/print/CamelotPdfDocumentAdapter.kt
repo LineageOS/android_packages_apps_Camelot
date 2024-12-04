@@ -17,16 +17,6 @@ class CamelotPdfDocumentAdapter(
     private val uri: Uri,
     val name: String
 ) : PrintDocumentAdapter() {
-    private lateinit var fileDescriptor: ParcelFileDescriptor
-
-    override fun onStart() {
-        fileDescriptor = contentResolver.openFileDescriptor(uri, "r")!!
-    }
-
-    override fun onFinish() {
-        fileDescriptor.close()
-    }
-
     override fun onLayout(
         oldAttributes: PrintAttributes?,
         newAttributes: PrintAttributes?,
@@ -53,14 +43,14 @@ class CamelotPdfDocumentAdapter(
         cancellationSignal: android.os.CancellationSignal?,
         callback: WriteResultCallback?
     ) {
-        val input = ParcelFileDescriptor.AutoCloseInputStream(fileDescriptor)
-        val output = ParcelFileDescriptor.AutoCloseOutputStream(destination)
+        ParcelFileDescriptor.AutoCloseInputStream(
+            contentResolver.openFileDescriptor(uri, "r")
+        ).use { input ->
+            ParcelFileDescriptor.AutoCloseOutputStream(destination).use { output ->
+                input.copyTo(output)
+            }
 
-        input.copyTo(output)
-
-        input.close()
-        output.close()
-
-        callback?.onWriteFinished(arrayOf(android.print.PageRange.ALL_PAGES))
+            callback?.onWriteFinished(arrayOf(android.print.PageRange.ALL_PAGES))
+        }
     }
 }

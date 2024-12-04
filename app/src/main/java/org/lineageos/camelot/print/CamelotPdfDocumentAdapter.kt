@@ -10,9 +10,10 @@ import android.print.PrintAttributes
 import android.print.PrintDocumentAdapter
 import android.print.PrintDocumentInfo
 
-class CamelotPdfDocumentAdapter(private val fileDescriptor: ParcelFileDescriptor) :
-    PrintDocumentAdapter() {
-
+class CamelotPdfDocumentAdapter(
+    private val name: String,
+    private val fileDescriptor: ParcelFileDescriptor
+) : PrintDocumentAdapter() {
     override fun onLayout(
         oldAttributes: PrintAttributes?,
         newAttributes: PrintAttributes?,
@@ -25,7 +26,7 @@ class CamelotPdfDocumentAdapter(private val fileDescriptor: ParcelFileDescriptor
             return
         }
 
-        val info = PrintDocumentInfo.Builder("Printed Document")
+        val info = PrintDocumentInfo.Builder(name)
             .setContentType(PrintDocumentInfo.CONTENT_TYPE_DOCUMENT)
             .setPageCount(PrintDocumentInfo.PAGE_COUNT_UNKNOWN)
             .build()

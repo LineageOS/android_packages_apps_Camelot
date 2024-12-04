@@ -135,9 +135,10 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
                 contentResolver.openFileDescriptor(it, "r")?.use { fileDescriptor ->
                     val printManager = getSystemService(PrintManager::class.java)
 
-                    val printDocumentAdapter = CamelotPdfDocumentAdapter(fileDescriptor)
+                    val name = pdfViewModel.pdfName.value ?: getString(R.string.pdf_document)
+                    val printDocumentAdapter = CamelotPdfDocumentAdapter(name, fileDescriptor)
                     printManager.print(
-                        "PDF Document",
+                        name,
                         printDocumentAdapter,
                         PrintAttributes.Builder().build()
                     )

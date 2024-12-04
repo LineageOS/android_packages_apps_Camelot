@@ -13,6 +13,7 @@ import android.print.PrintDocumentAdapter
 import android.print.PrintDocumentInfo
 
 class CamelotPdfDocumentAdapter(
+    val name: String,
     private val contentResolver: ContentResolver,
     private val uri: Uri,
 ) : PrintDocumentAdapter() {
@@ -38,7 +39,7 @@ class CamelotPdfDocumentAdapter(
             return
         }
 
-        val info = PrintDocumentInfo.Builder("Printed Document")
+        val info = PrintDocumentInfo.Builder(name)
             .setContentType(PrintDocumentInfo.CONTENT_TYPE_DOCUMENT)
             .setPageCount(PrintDocumentInfo.PAGE_COUNT_UNKNOWN)
             .build()

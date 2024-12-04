@@ -5,13 +5,26 @@
 
 package org.lineageos.camelot.print
 
+import android.content.ContentResolver
+import android.net.Uri
 import android.os.ParcelFileDescriptor
 import android.print.PrintAttributes
 import android.print.PrintDocumentAdapter
 import android.print.PrintDocumentInfo
 
-class CamelotPdfDocumentAdapter(private val fileDescriptor: ParcelFileDescriptor) :
-    PrintDocumentAdapter() {
+class CamelotPdfDocumentAdapter(
+    private val contentResolver: ContentResolver,
+    private val uri: Uri,
+) : PrintDocumentAdapter() {
+    private lateinit var fileDescriptor: ParcelFileDescriptor
+
+    override fun onStart() {
+        fileDescriptor = contentResolver.openFileDescriptor(uri, "r")!!
+    }
+
+    override fun onFinish() {
+        fileDescriptor.close()
+    }
 
     override fun onLayout(
         oldAttributes: PrintAttributes?,

@@ -16,6 +16,23 @@
       "message": "seems to work",
       "revId": "f19a4a3ee9f11a31f0c66ec726be58ef22385b48",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6623d9c3_8f3bf1d3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2024-12-04T13:44:17Z",
+      "side": 1,
+      "message": "don\u0027t have a printer, but \"save as pdf\" works.",
+      "revId": "f19a4a3ee9f11a31f0c66ec726be58ef22385b48",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

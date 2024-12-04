@@ -133,9 +133,11 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
         R.id.action_print -> {
             pdfUri?.let {
                 val printManager = getSystemService(PrintManager::class.java)
-                val printDocumentAdapter = CamelotPdfDocumentAdapter(contentResolver, it)
+
+                val name = pdfViewModel.pdfName.value ?: getString(R.string.pdf_document)
+                val printDocumentAdapter = CamelotPdfDocumentAdapter(contentResolver, it, name)
                 printManager.print(
-                    "PDF Document",
+                    name,
                     printDocumentAdapter,
                     PrintAttributes.Builder().build()
                 )

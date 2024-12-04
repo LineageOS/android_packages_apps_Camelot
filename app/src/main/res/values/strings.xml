@@ -9,5 +9,6 @@
     <string name="send">Send</string>
     <string name="open_with">Open with…</string>
     <string name="download">Download</string>
+    <string name="pdf_document">PDF Document</string>
     <string name="print">Print</string>
 </resources>

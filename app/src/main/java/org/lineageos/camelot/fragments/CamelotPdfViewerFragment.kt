@@ -24,17 +24,20 @@ class CamelotPdfViewerFragment : PdfViewerFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val fastScrollView = view.findViewById<View>(androidx.pdf.R.id.fast_scroll_view)
+        sequenceOf<View>(
+            view.findViewById(androidx.pdf.R.id.fast_scroll_view),
+            view.findViewById(androidx.pdf.R.id.edit_fab),
+        ).forEach {
+            ViewCompat.setOnApplyWindowInsetsListener(it) { v, windowInsets ->
+                val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
 
-        ViewCompat.setOnApplyWindowInsetsListener(fastScrollView) { v, windowInsets ->
-            val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
+                v.updateMargin(
+                    insets,
+                    bottom = true,
+                )
 
-            v.updateMargin(
-                insets,
-                bottom = true,
-            )
-
-            windowInsets
+                windowInsets
+            }
         }
     }
 

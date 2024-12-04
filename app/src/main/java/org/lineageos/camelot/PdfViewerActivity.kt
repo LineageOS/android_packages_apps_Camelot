@@ -125,6 +125,10 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
                 Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
                     addCategory(Intent.CATEGORY_OPENABLE)
                     type = MIME_TYPE_PDF
+                    putExtra(
+                        Intent.EXTRA_TITLE,
+                        pdfViewModel.pdfName.value ?: getString(R.string.pdf_document)
+                    )
                 }
             )
             true

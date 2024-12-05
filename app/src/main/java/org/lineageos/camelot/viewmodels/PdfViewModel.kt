@@ -14,7 +14,14 @@ class PdfViewModel(application: Application) : AndroidViewModel(application) {
     private val _pdfName = MutableStateFlow<String?>(null)
     val pdfName = _pdfName.asStateFlow()
 
+    private val _immersiveMode = MutableStateFlow(false)
+    val immersiveMode = _immersiveMode.asStateFlow()
+
     fun setPdfName(pdfName: String?) {
         _pdfName.value = pdfName
+    }
+
+    fun setImmersiveMode(immersiveMode: Boolean) {
+        _immersiveMode.value = immersiveMode
     }
 }

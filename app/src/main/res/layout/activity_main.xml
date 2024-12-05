@@ -4,7 +4,6 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -27,8 +26,6 @@
         android:name="org.lineageos.camelot.fragments.CamelotPdfViewerFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:ignore="NewApi" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

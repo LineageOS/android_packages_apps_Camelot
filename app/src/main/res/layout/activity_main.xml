@@ -9,6 +9,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="org.lineageos.camelot.fragments.CamelotPdfViewerFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="NewApi" />
+
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
@@ -21,14 +28,5 @@
             android:layout_height="wrap_content" />
 
     </com.google.android.material.appbar.AppBarLayout>
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView"
-        android:name="org.lineageos.camelot.fragments.CamelotPdfViewerFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:ignore="NewApi" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

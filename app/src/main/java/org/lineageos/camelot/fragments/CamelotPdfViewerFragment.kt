@@ -25,7 +25,7 @@ class CamelotPdfViewerFragment : PdfViewerFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         sequenceOf<View>(
-            view.findViewById(androidx.pdf.R.id.fast_scroll_view),
+            view.findViewById(androidx.pdf.R.id.pdf_page_num),
             view.findViewById(androidx.pdf.R.id.edit_fab),
         ).forEach {
             ViewCompat.setOnApplyWindowInsetsListener(it) { v, windowInsets ->
@@ -33,6 +33,7 @@ class CamelotPdfViewerFragment : PdfViewerFragment() {
 
                 v.updateMargin(
                     insets,
+                    top = true,
                     bottom = true,
                 )
 
@@ -51,5 +52,11 @@ class CamelotPdfViewerFragment : PdfViewerFragment() {
         super.onLoadDocumentError(error)
 
         pdfViewModel.setPdfName(null)
+    }
+
+    override fun onRequestImmersiveMode(enterImmersive: Boolean) {
+        super.onRequestImmersiveMode(enterImmersive)
+
+        pdfViewModel.setImmersiveMode(enterImmersive)
     }
 }

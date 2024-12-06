@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2024 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="#ffffff"
+        android:fillType="evenOdd"
+        android:pathData="M69,72L69,42.76L58.24,32H43C40.79,32 39,33.79 39,36V72C39,74.21 40.79,76 43,76H65C67.21,76 69,74.21 69,72ZM42,36L42,51.21C45.53,49.17 49.63,48 54,48C58.37,48 62.47,49.17 66,51.21V44H61C58.79,44 57,42.21 57,40V35L43,35C42.45,35 42,35.45 42,36ZM46.94,66.45H45.35V57.91H48.85C49.3,57.91 49.68,58.07 49.98,58.37C50.29,58.68 50.44,59.06 50.44,59.51V61.41C50.44,61.86 50.29,62.24 49.98,62.55C49.68,62.86 49.3,63.01 48.85,63.01H46.94V66.45ZM46.94,59.51V61.41H48.85V59.51H46.94ZM55.71,66.45H52.24V57.91H55.71C56.15,57.91 56.52,58.07 56.84,58.37C57.15,58.68 57.3,59.06 57.3,59.51V64.86C57.3,65.31 57.15,65.69 56.84,65.99C56.52,66.3 56.15,66.45 55.71,66.45ZM53.83,59.51V64.86H55.71V59.51H53.83ZM60.83,66.45H59.24V57.91H62.79V59.51H60.83V61.41H62.79V63.01H60.83V66.45Z" />
+</vector>

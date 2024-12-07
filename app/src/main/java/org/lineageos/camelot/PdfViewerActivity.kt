@@ -18,13 +18,10 @@ import androidx.activity.viewModels
 import androidx.annotation.RequiresExtension
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.util.Consumer
-import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.WindowInsetsControllerCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.google.android.material.appbar.MaterialToolbar
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import org.lineageos.camelot.fragments.CamelotPdfViewerFragment
@@ -39,11 +36,6 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
 
     // Views
     private val toolbar by lazy { findViewById<MaterialToolbar>(R.id.toolbar) }
-
-    // Insets
-    private val windowInsetsController by lazy {
-        WindowInsetsControllerCompat(window, window.decorView)
-    }
 
     // Fragment
     private val pdfViewerFragment by lazy {
@@ -71,9 +63,6 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-
-        windowInsetsController.systemBarsBehavior =
-            WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
 
         setSupportActionBar(toolbar)
         supportActionBar?.apply {
@@ -175,31 +164,10 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
     }
 
     private suspend fun loadData() {
-        coroutineScope {
-            launch {
-                pdfViewModel.pdfName.collectLatest {
-                    it?.also { pdfName ->
-                        title = pdfName
-                    } ?: setTitle(R.string.app_name)
-                }
-            }
-
-            launch {
-                pdfViewModel.immersiveMode.collectLatest {
-                    val systemBars = WindowInsetsCompat.Type.systemBars()
-                    when (it) {
-                        true -> windowInsetsController.hide(systemBars)
-                        false -> windowInsetsController.show(systemBars)
-                    }
-
-                    supportActionBar?.apply {
-                        when (it) {
-                            true -> hide()
-                            false -> show()
-                        }
-                    }
-                }
-            }
+        pdfViewModel.pdfName.collectLatest {
+            it?.also { pdfName ->
+                title = pdfName
+            } ?: setTitle(R.string.app_name)
         }
     }
 

@@ -24,6 +24,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "628b2e69_804217f4",
+        "filename": "app/src/main/java/org/lineageos/camelot/PdfViewerActivity.kt",
+        "patchSetId": 6
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-12-07T17:37:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aeeeb078_ecd06f93",
+      "range": {
+        "startLine": 79,
+        "startChar": 0,
+        "endLine": 82,
+        "endChar": 9
+      },
+      "revId": "dc7fcc0642c9ca3cc0192572cbc31ca06e02a915",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "49c578a2_ac04fffa",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-12-07T17:32:02Z",
       "side": 1,
       "message": "ditto",
+      "range": {
+        "startLine": 106,
+        "startChar": 0,
+        "endLine": 109,
+        "endChar": 9
+      },
+      "revId": "dc7fcc0642c9ca3cc0192572cbc31ca06e02a915",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bd2659b4_d1165763",
+        "filename": "app/src/main/java/org/lineageos/camelot/PdfViewerActivity.kt",
+        "patchSetId": 6
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-12-07T17:37:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "49c578a2_ac04fffa",
       "range": {
         "startLine": 106,
         "startChar": 0,

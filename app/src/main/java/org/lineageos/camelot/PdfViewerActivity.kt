@@ -65,6 +65,10 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
         enableEdgeToEdge()
 
         setSupportActionBar(toolbar)
+        supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+        }
 
         addOnNewIntentListener(intentListener)
         intentListener.accept(intent)
@@ -88,6 +92,11 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
     }
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+        android.R.id.home -> {
+            onBackPressedDispatcher.onBackPressed()
+            true
+        }
+
         R.id.action_find_in_page -> {
             pdfViewerFragment.isTextSearchActive = true
             true

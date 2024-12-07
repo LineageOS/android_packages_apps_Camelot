@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f1553e6_a45d1848",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-12-07T22:13:30Z",
+      "side": 1,
+      "message": "If you can figure out a saner way to have immersive go for it, but I get random onRequestImmersiveMode calls with no real cause",
+      "revId": "7927e8f46c0c3ed7d2a1d05d27c4244f9159de7d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

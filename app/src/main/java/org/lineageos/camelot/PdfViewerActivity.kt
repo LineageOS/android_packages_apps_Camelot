@@ -13,17 +13,21 @@ import android.print.PrintAttributes
 import android.print.PrintManager
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.annotation.RequiresExtension
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.util.Consumer
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.google.android.material.appbar.MaterialToolbar
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import org.lineageos.camelot.ext.updateMargin
 import org.lineageos.camelot.fragments.CamelotPdfViewerFragment
 import org.lineageos.camelot.print.CamelotPdfDocumentAdapter
 import org.lineageos.camelot.viewmodels.PdfViewModel
@@ -72,6 +76,21 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
 
         addOnNewIntentListener(intentListener)
         intentListener.accept(intent)
+
+        sequenceOf<View>(
+            findViewById(R.id.fragmentContainerView),
+        ).forEach {
+            ViewCompat.setOnApplyWindowInsetsListener(it) { v, windowInsets ->
+                val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
+
+                v.updateMargin(
+                    insets,
+                    bottom = true,
+                )
+
+                windowInsets
+            }
+        }
 
         lifecycleScope.launch {
             lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {

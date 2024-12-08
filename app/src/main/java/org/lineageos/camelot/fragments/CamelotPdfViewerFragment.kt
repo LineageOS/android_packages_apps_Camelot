@@ -5,17 +5,24 @@
 
 package org.lineageos.camelot.fragments
 
+import android.graphics.Rect
 import android.os.Build
 import android.os.Bundle
 import android.view.View
+import android.view.ViewGroup
 import androidx.annotation.RequiresExtension
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.marginBottom
+import androidx.core.view.marginLeft
+import androidx.core.view.marginRight
+import androidx.core.view.marginTop
+import androidx.core.view.updateLayoutParams
 import androidx.fragment.app.activityViewModels
 import androidx.pdf.viewer.fragment.PdfViewerFragment
 import androidx.pdf.viewer.fragment.pdfName
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import org.lineageos.camelot.ext.updateMargin
-import org.lineageos.camelot.ext.updatePadding
 import org.lineageos.camelot.viewmodels.PdfViewModel
 
 @RequiresExtension(extension = Build.VERSION_CODES.S, version = 13)
@@ -40,17 +47,25 @@ class CamelotPdfViewerFragment : PdfViewerFragment() {
             windowInsets
         }
 
-        ViewCompat.setOnApplyWindowInsetsListener(
-            view.findViewById(androidx.pdf.R.id.edit_fab)
-        ) { v, windowInsets ->
-            val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
-
-            v.updatePadding(
-                insets,
-                bottom = true,
+        view.findViewById<FloatingActionButton>(androidx.pdf.R.id.edit_fab).let {
+            val originalMargins = Rect(
+                it.marginLeft,
+                it.marginTop,
+                it.marginRight,
+                it.marginBottom,
             )
 
-            windowInsets
+            ViewCompat.setOnApplyWindowInsetsListener(it) { v, windowInsets ->
+                val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
+
+                if (!pdfViewModel.immersiveMode.value) {
+                    v.updateLayoutParams<ViewGroup.MarginLayoutParams> {
+                        bottomMargin = originalMargins.bottom + insets.bottom
+                    }
+                }
+
+                windowInsets
+            }
         }
     }
 

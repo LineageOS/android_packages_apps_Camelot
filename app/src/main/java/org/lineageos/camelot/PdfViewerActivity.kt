@@ -13,6 +13,7 @@ import android.print.PrintAttributes
 import android.print.PrintManager
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View.MeasureSpec
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.annotation.RequiresExtension
@@ -71,6 +72,9 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+        toolbar.measure(MeasureSpec.UNSPECIFIED, MeasureSpec.UNSPECIFIED)
+        pdfViewModel.setToolbarHeight(toolbar.measuredHeight)
 
         windowInsetsController.systemBarsBehavior =
             WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE

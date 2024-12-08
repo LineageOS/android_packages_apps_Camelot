@@ -15,7 +15,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.pdf.viewer.fragment.PdfViewerFragment
 import androidx.pdf.viewer.fragment.pdfName
 import org.lineageos.camelot.ext.updateMargin
-import org.lineageos.camelot.ext.updatePadding
 import org.lineageos.camelot.viewmodels.PdfViewModel
 
 @RequiresExtension(extension = Build.VERSION_CODES.S, version = 13)
@@ -45,10 +44,12 @@ class CamelotPdfViewerFragment : PdfViewerFragment() {
         ) { v, windowInsets ->
             val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
 
-            v.updatePadding(
-                insets,
-                bottom = true,
-            )
+            if (!pdfViewModel.immersiveMode.value) {
+                v.updateMargin(
+                    insets,
+                    bottom = true,
+                )
+            }
 
             windowInsets
         }

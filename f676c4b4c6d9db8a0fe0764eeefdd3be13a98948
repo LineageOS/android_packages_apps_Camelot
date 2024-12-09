@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "92df8ee4_1a5b02e9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-12-09T10:21:44Z",
+      "side": 1,
+      "message": "It\u0027s now taken into account twice for pill for gesture but who cares.",
+      "revId": "f676c4b4c6d9db8a0fe0764eeefdd3be13a98948",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

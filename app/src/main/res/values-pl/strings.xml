@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2024 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">Przeglądarka plików PDF</string>
+    <string name="find_in_page">Znajdź na stronie</string>
+    <string name="send">Wyślij</string>
+    <string name="open_with">Otwórz za pomocą…</string>
+    <string name="download">Pobierz</string>
+    <string name="pdf_document">Dokument PDF</string>
+    <string name="print">Drukuj</string>
+</resources>

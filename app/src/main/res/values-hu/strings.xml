@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2024 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">PDF-megjelenítő</string>
+    <string name="find_in_page">Keresés az oldalon</string>
+    <string name="send">Küldés</string>
+    <string name="open_with">Megnyitás a következővel…</string>
+    <string name="download">Letöltés</string>
+    <string name="pdf_document">PDF-dokumentum</string>
+    <string name="print">Nyomtatás</string>
+</resources>

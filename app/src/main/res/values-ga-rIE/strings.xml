@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2024 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">Breathnóir PDF</string>
+    <string name="find_in_page">Faigh sa leathanach</string>
+    <string name="send">Seol</string>
+    <string name="open_with">Oscail le…</string>
+    <string name="download">Íoslódáil</string>
+    <string name="pdf_document">Doiciméad PDF</string>
+    <string name="print">Priontáil</string>
+</resources>

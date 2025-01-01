@@ -9,7 +9,7 @@ android_library_import {
     name: "Camelot_androidx.pdf_pdf-viewer-nodeps",
     aars: ["androidx/pdf/pdf-viewer/1.0.0-alpha04/pdf-viewer-1.0.0-alpha04.aar"],
     sdk_version: "35",
-    min_sdk_version: "14",
+    min_sdk_version: "35",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -28,7 +28,7 @@ android_library_import {
 android_library {
     name: "Camelot_androidx.pdf_pdf-viewer",
     sdk_version: "35",
-    min_sdk_version: "14",
+    min_sdk_version: "35",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -44,14 +44,13 @@ android_library {
         "kotlin-stdlib",
         "kotlinx-coroutines-core",
     ],
-    java_version: "1.7",
 }
 
 android_library_import {
     name: "Camelot_androidx.pdf_pdf-viewer-fragment-nodeps",
     aars: ["androidx/pdf/pdf-viewer-fragment/1.0.0-alpha04/pdf-viewer-fragment-1.0.0-alpha04.aar"],
     sdk_version: "35",
-    min_sdk_version: "14",
+    min_sdk_version: "35",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -68,7 +67,7 @@ android_library_import {
 android_library {
     name: "Camelot_androidx.pdf_pdf-viewer-fragment",
     sdk_version: "35",
-    min_sdk_version: "14",
+    min_sdk_version: "35",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -82,5 +81,4 @@ android_library {
         "com.google.android.material_material",
         "kotlin-stdlib",
     ],
-    java_version: "1.7",
 }

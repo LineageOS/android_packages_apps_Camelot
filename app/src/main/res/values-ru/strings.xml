@@ -4,5 +4,11 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
+    <string name="app_name">Просмотр PDF</string>
     <string name="find_in_page">Найти на странице</string>
+    <string name="send">Отправить</string>
+    <string name="open_with">Открыть с помощью…</string>
+    <string name="download">Скачать</string>
+    <string name="pdf_document">Документ PDF</string>
+    <string name="print">Печать</string>
 </resources>

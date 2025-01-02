@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2024 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">Προβολή PDF</string>
+    <string name="find_in_page">Εύρεση στη σελίδα</string>
+    <string name="send">Αποστολή</string>
+    <string name="open_with">Άνοιγμα με…</string>
+    <string name="download">Λήψη</string>
+    <string name="pdf_document">Έγγραφο PDF</string>
+    <string name="print">Εκτύπωση</string>
+</resources>

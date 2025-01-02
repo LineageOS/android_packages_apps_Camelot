@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2024 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">PDF阅读器</string>
+    <string name="find_in_page">在本页中查找</string>
+    <string name="send">发送 </string>
+    <string name="open_with">打开方式...</string>
+    <string name="download">下载</string>
+    <string name="pdf_document">PDF文档</string>
+    <string name="print">打印</string>
+</resources>

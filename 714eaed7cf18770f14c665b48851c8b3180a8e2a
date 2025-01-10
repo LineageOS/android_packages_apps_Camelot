@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "19c21121_2e2ad1f3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-10T20:30:13Z",
+      "side": 1,
+      "message": "Matches google\u0027s text app, alpha05 is needed since ZoomView now supports config changes",
+      "revId": "714eaed7cf18770f14c665b48851c8b3180a8e2a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

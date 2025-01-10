@@ -59,7 +59,9 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.fragment.ktx)
-    implementation(libs.androidx.pdf.viewer.fragment)
+    implementation(libs.androidx.pdf.viewer.fragment) {
+        exclude("org.jspecify", "jspecify")
+    }
     implementation(libs.material)
 }
 

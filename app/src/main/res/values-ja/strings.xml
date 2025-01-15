@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2024 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">PDF ビューア</string>
+    <string name="find_in_page">ページ内を検索</string>
+    <string name="send">送る</string>
+    <string name="open_with">アプリで開く…</string>
+    <string name="download">ダウンロード</string>
+    <string name="pdf_document">PDF ドキュメント</string>
+    <string name="print">印刷</string>
+</resources>

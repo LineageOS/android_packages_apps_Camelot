@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 The LineageOS Project
+ * SPDX-FileCopyrightText: 2024-2025 The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -125,7 +125,7 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
                         putExtra(Intent.EXTRA_STREAM, pdfUri)
                         type = MIME_TYPE_PDF
                     },
-                    getString(R.string.send)
+                    getString(R.string.share)
                 )
             )
             true

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "249f8585_8d2ebd3f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2195
+      },
+      "writtenOn": "2025-02-25T19:35:56Z",
+      "side": 1,
+      "message": "PS1: Existing translations preserved\nPS2: New string, since it\u0027s a change in the word.",
+      "revId": "3d619c0604fcdac8aa4766fbe495a1277fdcb199",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

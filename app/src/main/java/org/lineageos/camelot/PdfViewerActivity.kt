@@ -125,7 +125,7 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
                         putExtra(Intent.EXTRA_STREAM, pdfUri)
                         type = MIME_TYPE_PDF
                     },
-                    getString(R.string.send)
+                    getString(R.string.share)
                 )
             )
             true

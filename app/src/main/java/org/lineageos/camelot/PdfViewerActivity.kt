@@ -15,6 +15,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View.MeasureSpec
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts.CreateDocument
 import androidx.activity.viewModels
 import androidx.annotation.RequiresExtension
 import androidx.appcompat.app.AppCompatActivity
@@ -67,6 +68,11 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
         intent.data?.let {
             pdfUri = it
         }
+    }
+
+    // Launcher
+    private val documentLauncher = registerForActivityResult(CreateDocument(MIME_TYPE_PDF)) {
+        if (it != null) copyPDF(it)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -145,15 +151,8 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
         }
 
         R.id.action_download -> {
-            startActivity(
-                Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
-                    addCategory(Intent.CATEGORY_OPENABLE)
-                    type = MIME_TYPE_PDF
-                    putExtra(
-                        Intent.EXTRA_TITLE,
-                        pdfViewModel.pdfName.value ?: getString(R.string.pdf_document)
-                    )
-                }
+            documentLauncher.launch(
+                pdfViewModel.pdfName.value ?: getString(R.string.pdf_document)
             )
             true
         }
@@ -203,6 +202,14 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
                         }
                     }
                 }
+            }
+        }
+    }
+
+    private fun copyPDF(uri: Uri) {
+        contentResolver.openInputStream(pdfUri!!)?.use { input ->
+            contentResolver.openOutputStream(uri)?.use { output ->
+                input.copyTo(output)
             }
         }
     }

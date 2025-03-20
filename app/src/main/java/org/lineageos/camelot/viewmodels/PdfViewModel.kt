@@ -1,11 +1,12 @@
 /*
- * SPDX-FileCopyrightText: 2024 The LineageOS Project
+ * SPDX-FileCopyrightText: 2024-2025 The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
 package org.lineageos.camelot.viewmodels
 
 import android.app.Application
+import android.net.Uri
 import androidx.lifecycle.AndroidViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -30,5 +31,18 @@ class PdfViewModel(application: Application) : AndroidViewModel(application) {
 
     fun setToolbarHeight(toolbarHeight: Int) {
         _toolbarHeight.value = toolbarHeight
+    }
+
+    fun copyPdf(sourceUri: Uri?, destinationUri: Uri?) {
+        val contentResolver = getApplication<Application>().contentResolver
+
+        val source = sourceUri ?: return
+        val destination = destinationUri ?: return
+
+        contentResolver.openInputStream(source)?.use { input ->
+            contentResolver.openOutputStream(destination)?.use { output ->
+                input.copyTo(output)
+            }
+        }
     }
 }

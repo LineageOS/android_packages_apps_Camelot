@@ -8,8 +8,10 @@ package org.lineageos.camelot.viewmodels
 import android.app.Application
 import android.net.Uri
 import androidx.lifecycle.AndroidViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.withContext
 
 class PdfViewModel(application: Application) : AndroidViewModel(application) {
     private val _pdfName = MutableStateFlow<String?>(null)
@@ -33,13 +35,16 @@ class PdfViewModel(application: Application) : AndroidViewModel(application) {
         _toolbarHeight.value = toolbarHeight
     }
 
-    fun copyPdf(sourceUri: Uri, destinationUri: Uri) {
+    suspend fun copyPdf(sourceUri: Uri, destinationUri: Uri) = withContext(Dispatchers.IO) {
         val contentResolver = getApplication<Application>().contentResolver
 
-        contentResolver.openInputStream(sourceUri)?.use { input ->
-            contentResolver.openOutputStream(destinationUri)?.use { output ->
-                input.copyTo(output)
+        runCatching {
+            contentResolver.openInputStream(sourceUri)?.use { input ->
+                contentResolver.openOutputStream(destinationUri)?.use { output ->
+                    input.copyTo(output)
+                    true
+                }
             }
-        }
+        }.getOrNull() ?: false
     }
 }

@@ -18,6 +18,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.annotation.RequiresExtension
+import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.util.Consumer
 import androidx.core.view.WindowInsetsCompat
@@ -26,6 +27,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.google.android.material.appbar.MaterialToolbar
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -74,7 +76,16 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
     private val documentLauncher = registerForActivityResult(
         ActivityResultContracts.CreateDocument(MIME_TYPE_PDF)
     ) { uri ->
-        pdfViewModel.copyPdf(pdfUri, uri)
+        lifecycleScope.launch {
+            val result = pdfViewModel.copyPdf(pdfUri, uri)
+
+            showSnackbar(
+                when (result) {
+                    true -> R.string.download_successful
+                    false -> R.string.download_error
+                }
+            )
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -206,6 +217,17 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
                 }
             }
         }
+    }
+
+    private fun showSnackbar(@StringRes messageStringResId: Int) {
+        Snackbar.make(
+            this,
+            pdfViewerFragment.requireView(),
+            getString(messageStringResId),
+            Snackbar.LENGTH_LONG
+        )
+            .setAction(android.R.string.ok) {}
+            .show()
     }
 
     companion object {

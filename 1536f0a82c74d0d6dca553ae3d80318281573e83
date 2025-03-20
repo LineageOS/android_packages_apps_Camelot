@@ -34,6 +34,29 @@
       "parentUuid": "3476183c_610751ab",
       "revId": "1536f0a82c74d0d6dca553ae3d80318281573e83",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6f676337_140845e9",
+        "filename": "app/src/main/java/org/lineageos/camelot/viewmodels/PdfViewModel.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-03-20T13:11:08Z",
+      "side": 1,
+      "message": "why not simply runCatching {}.fold onSuccess { ret true } else {ret false}?",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 30
+      },
+      "revId": "1536f0a82c74d0d6dca553ae3d80318281573e83",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

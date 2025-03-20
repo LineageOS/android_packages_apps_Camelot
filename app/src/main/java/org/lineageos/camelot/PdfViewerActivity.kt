@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 The LineageOS Project
+ * SPDX-FileCopyrightText: 2024-2025 The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -15,6 +15,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View.MeasureSpec
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.annotation.RequiresExtension
 import androidx.appcompat.app.AppCompatActivity
@@ -66,6 +67,17 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
     private val intentListener = Consumer<Intent> { intent ->
         intent.data?.let {
             pdfUri = it
+        }
+    }
+
+    // Launcher
+    private val documentLauncher = registerForActivityResult(
+        ActivityResultContracts.CreateDocument(MIME_TYPE_PDF)
+    ) { uri ->
+        uri?.let { destinationUri ->
+            pdfUri?.let { sourceUri ->
+                pdfViewModel.copyPdf(sourceUri, destinationUri)
+            }
         }
     }
 
@@ -145,15 +157,8 @@ class PdfViewerActivity : AppCompatActivity(R.layout.activity_main) {
         }
 
         R.id.action_download -> {
-            startActivity(
-                Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
-                    addCategory(Intent.CATEGORY_OPENABLE)
-                    type = MIME_TYPE_PDF
-                    putExtra(
-                        Intent.EXTRA_TITLE,
-                        pdfViewModel.pdfName.value ?: getString(R.string.pdf_document)
-                    )
-                }
+            documentLauncher.launch(
+                pdfViewModel.pdfName.value ?: getString(R.string.pdf_document)
             )
             true
         }

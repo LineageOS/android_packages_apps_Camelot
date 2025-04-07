@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     SPDX-FileCopyrightText: 2024 The LineageOS Project
+     SPDX-FileCopyrightText: 2024-2025 The LineageOS Project
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
@@ -11,4 +11,6 @@
     <string name="download">Letöltés</string>
     <string name="pdf_document">PDF-dokumentum</string>
     <string name="print">Nyomtatás</string>
+    <string name="download_successful">Sikeresen letöltve</string>
+    <string name="download_error">Hiba a fájl letöltése közben </string>
 </resources>

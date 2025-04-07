@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     SPDX-FileCopyrightText: 2024 The LineageOS Project
+     SPDX-FileCopyrightText: 2024-2025 The LineageOS Project
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
@@ -11,4 +11,6 @@
     <string name="download">Scarica</string>
     <string name="pdf_document">Documento PDF</string>
     <string name="print">Stampa</string>
+    <string name="download_successful">Scaricamento completato con successo</string>
+    <string name="download_error">Errore durante lo scaricamento del file</string>
 </resources>

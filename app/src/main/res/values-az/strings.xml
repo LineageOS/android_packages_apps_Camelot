@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     SPDX-FileCopyrightText: 2024 The LineageOS Project
+     SPDX-FileCopyrightText: 2024-2025 The LineageOS Project
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
@@ -11,4 +11,6 @@
     <string name="download">Endir</string>
     <string name="pdf_document">PDF Sənədi</string>
     <string name="print">Çap et</string>
+    <string name="download_successful">Uğurla endirildi</string>
+    <string name="download_error">Faylı endirərkən xəta baş verdi</string>
 </resources>

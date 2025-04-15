@@ -6,9 +6,11 @@
 <resources>
     <string name="app_name">Lecteur PDF</string>
     <string name="find_in_page">Rechercher dans la page</string>
-    <string name="send">Envoyer</string>
+    <string name="share">Partager</string>
     <string name="open_with">Ouvrir avec…</string>
     <string name="download">Télécharger</string>
     <string name="pdf_document">Document PDF</string>
     <string name="print">Imprimer</string>
+    <string name="download_successful">Téléchargement terminé</string>
+    <string name="download_error">Erreur lors du téléchargement du fichier</string>
 </resources>

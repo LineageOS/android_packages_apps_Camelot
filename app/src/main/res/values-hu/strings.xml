@@ -6,7 +6,7 @@
 <resources>
     <string name="app_name">PDF-megjelenítő</string>
     <string name="find_in_page">Keresés az oldalon</string>
-    <string name="send">Küldés</string>
+    <string name="share">Megosztás</string>
     <string name="open_with">Megnyitás a következővel…</string>
     <string name="download">Letöltés</string>
     <string name="pdf_document">PDF-dokumentum</string>

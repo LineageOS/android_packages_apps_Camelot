@@ -6,7 +6,7 @@
 <resources>
     <string name="app_name">PDF Viewer</string>
     <string name="find_in_page">Find in page</string>
-    <string name="send">Send</string>
+    <string name="share">Share</string>
     <string name="open_with">Open with…</string>
     <string name="download">Download</string>
     <string name="pdf_document">PDF Document</string>

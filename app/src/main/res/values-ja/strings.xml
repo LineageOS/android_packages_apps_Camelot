@@ -6,7 +6,7 @@
 <resources>
     <string name="app_name">PDF ビューア</string>
     <string name="find_in_page">ページ内を検索</string>
-    <string name="send">送る</string>
+    <string name="share">共有</string>
     <string name="open_with">アプリで開く…</string>
     <string name="download">ダウンロード</string>
     <string name="pdf_document">PDF ドキュメント</string>

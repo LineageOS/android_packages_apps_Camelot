@@ -6,7 +6,7 @@
 <resources>
     <string name="app_name">PDF pregledovalnik</string>
     <string name="find_in_page">Najdi na strani</string>
-    <string name="send">Pošlji</string>
+    <string name="share">Deli</string>
     <string name="open_with">Odpri s/z …</string>
     <string name="download">Prenesi</string>
     <string name="pdf_document">PDF dokument</string>

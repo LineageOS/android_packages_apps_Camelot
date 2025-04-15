@@ -6,7 +6,7 @@
 <resources>
     <string name="app_name">Breathnóir PDF</string>
     <string name="find_in_page">Faigh sa leathanach</string>
-    <string name="send">Seol</string>
+    <string name="share">Comhroinn</string>
     <string name="open_with">Oscail le…</string>
     <string name="download">Íoslódáil</string>
     <string name="pdf_document">Doiciméad PDF</string>

@@ -6,7 +6,6 @@
 <resources>
     <string name="app_name">Trình xem PDF</string>
     <string name="find_in_page">Tìm trong trang</string>
-    <string name="send">Gửi</string>
     <string name="open_with">Mở bằng…</string>
     <string name="download">Tải xuống</string>
     <string name="pdf_document">Tài liệu PDF</string>

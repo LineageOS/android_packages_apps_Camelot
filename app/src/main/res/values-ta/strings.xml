@@ -6,7 +6,7 @@
 <resources>
     <string name="app_name">PDF காணி</string>
     <string name="find_in_page">பக்கத்தில் கண்டறிக</string>
-    <string name="send">அனுப்புக</string>
+    <string name="share">பகிர்க</string>
     <string name="open_with">இதன்மூலம் திறக்க</string>
     <string name="download">பதிவிறக்குக</string>
     <string name="pdf_document">PDF ஆவணம்</string>

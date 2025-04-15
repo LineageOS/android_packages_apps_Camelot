@@ -6,7 +6,6 @@
 <resources>
     <string name="app_name">Shikues PDF</string>
     <string name="find_in_page">Kërko në faqe</string>
-    <string name="send">Dërgo</string>
     <string name="open_with">Hap me...</string>
     <string name="download">Shkarko</string>
     <string name="pdf_document">Dokument PDF</string>

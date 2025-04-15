@@ -6,7 +6,7 @@
 <resources>
     <string name="app_name">نمایشگر PDF</string>
     <string name="find_in_page">یافتن در صفحه</string>
-    <string name="send">ارسال</string>
+    <string name="share">هم‌رسانی</string>
     <string name="open_with">بازکردن با…</string>
     <string name="download">بارگیری</string>
     <string name="pdf_document">سند PDF</string>

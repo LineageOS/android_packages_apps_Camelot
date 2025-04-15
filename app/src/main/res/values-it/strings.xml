@@ -6,7 +6,7 @@
 <resources>
     <string name="app_name">Visualizzatore PDF</string>
     <string name="find_in_page">Trova nella pagina</string>
-    <string name="send">Invia</string>
+    <string name="share">Condividi</string>
     <string name="open_with">Apri con…</string>
     <string name="download">Scarica</string>
     <string name="pdf_document">Documento PDF</string>

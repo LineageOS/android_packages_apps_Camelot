@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2024-2025 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">PDF Четец</string>
+    <string name="find_in_page">Търси в страницата</string>
+    <string name="share">Сподели</string>
+    <string name="open_with">Отвори с...</string>
+    <string name="download">Изтегляне</string>
+    <string name="pdf_document">PDF документ</string>
+    <string name="print">Печат</string>
+    <string name="download_successful">Изтеглянето е успешно</string>
+    <string name="download_error">Грешка при изтегляне на файла</string>
+</resources>

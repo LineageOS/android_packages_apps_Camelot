@@ -6,7 +6,6 @@
 <resources>
     <string name="app_name">Visor de PDF</string>
     <string name="find_in_page">Atopar na páxina</string>
-    <string name="send">Unviar</string>
     <string name="open_with">Abrir con…</string>
     <string name="download">Baxar</string>
     <string name="pdf_document">Documentu PDF</string>

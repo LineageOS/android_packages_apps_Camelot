@@ -57,7 +57,7 @@ class CamelotPdfViewerFragment : PdfViewerFragment() {
                         }
 
                         setScrollbarMarginTop(zoomView.paddingTop)
-                        setScrollbarMarginRight(insets.right)
+                        setVerticalThumbMarginRight(insets.right)
                         setScrollbarMarginBottom(zoomView.paddingBottom)
                     }
 

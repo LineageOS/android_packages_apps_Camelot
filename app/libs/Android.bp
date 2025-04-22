@@ -7,7 +7,7 @@
 
 android_library_import {
     name: "Camelot_androidx.pdf_pdf-document-service",
-    aars: ["androidx/pdf/pdf-document-service/1.0.0-alpha06/pdf-document-service-1.0.0-alpha06.aar"],
+    aars: ["androidx/pdf/pdf-document-service/1.0.0-alpha08/pdf-document-service-1.0.0-alpha08.aar"],
     sdk_version: "35",
     min_sdk_version: "35",
     apex_available: [
@@ -23,7 +23,7 @@ android_library_import {
 
 android_library_import {
     name: "Camelot_androidx.pdf_pdf-viewer",
-    aars: ["androidx/pdf/pdf-viewer/1.0.0-alpha06/pdf-viewer-1.0.0-alpha06.aar"],
+    aars: ["androidx/pdf/pdf-viewer/1.0.0-alpha08/pdf-viewer-1.0.0-alpha08.aar"],
     sdk_version: "35",
     min_sdk_version: "35",
     apex_available: [
@@ -33,6 +33,7 @@ android_library_import {
     static_libs: [
         "androidx.annotation_annotation",
         "androidx.core_core",
+        "androidx.customview_customview",
         "androidx.exifinterface_exifinterface",
         "com.google.android.material_material",
         "error_prone_annotations",
@@ -43,7 +44,7 @@ android_library_import {
 
 android_library_import {
     name: "Camelot_androidx.pdf_pdf-viewer-fragment",
-    aars: ["androidx/pdf/pdf-viewer-fragment/1.0.0-alpha06/pdf-viewer-fragment-1.0.0-alpha06.aar"],
+    aars: ["androidx/pdf/pdf-viewer-fragment/1.0.0-alpha08/pdf-viewer-fragment-1.0.0-alpha08.aar"],
     sdk_version: "35",
     min_sdk_version: "35",
     apex_available: [

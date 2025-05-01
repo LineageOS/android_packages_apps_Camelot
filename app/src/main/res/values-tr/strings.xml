@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2024-2025 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">PDF Görüntüleyici</string>
+    <string name="find_in_page">Sayfada bul</string>
+    <string name="share">Paylaş</string>
+    <string name="open_with">Birlikte aç...</string>
+    <string name="download">İndir</string>
+    <string name="pdf_document">PDF Belgesi</string>
+    <string name="print">Yazdır</string>
+    <string name="download_successful">İndirme başarılı</string>
+    <string name="download_error">Dosya indirilirken bir hata ile karşılaşıldı</string>
+</resources>

@@ -6,8 +6,11 @@
 <resources>
     <string name="app_name">PDF 뷰어</string>
     <string name="find_in_page">페이지에서 찾기</string>
+    <string name="share">공유</string>
     <string name="open_with">다른 앱으로 열기…</string>
     <string name="download">다운로드</string>
     <string name="pdf_document">PDF 문서</string>
     <string name="print">인쇄</string>
+    <string name="download_successful">다운로드 성공</string>
+    <string name="download_error">다운로드 오류</string>
 </resources>

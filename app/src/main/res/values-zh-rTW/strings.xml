@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2024-2025 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">PDF 檢視器</string>
+    <string name="find_in_page">在頁面中尋找</string>
+    <string name="share">分享</string>
+    <string name="open_with">開啟方式…</string>
+    <string name="download">下載</string>
+    <string name="pdf_document">PDF 檔案</string>
+    <string name="print">列印</string>
+    <string name="download_successful">下載成功</string>
+    <string name="download_error">下載檔案時發生錯誤</string>
+</resources>

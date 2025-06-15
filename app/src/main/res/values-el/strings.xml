@@ -6,8 +6,11 @@
 <resources>
     <string name="app_name">Προβολή PDF</string>
     <string name="find_in_page">Εύρεση στη σελίδα</string>
+    <string name="share">Κοινή χρήση</string>
     <string name="open_with">Άνοιγμα με…</string>
     <string name="download">Λήψη</string>
     <string name="pdf_document">Έγγραφο PDF</string>
     <string name="print">Εκτύπωση</string>
+    <string name="download_successful">Η λήψη ολοκληρώθηκε επιτυχώς</string>
+    <string name="download_error">Σφάλμα κατά τη λήψη του αρχείου</string>
 </resources>

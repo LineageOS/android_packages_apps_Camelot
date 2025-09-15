@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2024-2025 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">PDF Prohlížeč</string>
+    <string name="find_in_page">Najít na stránce</string>
+    <string name="share">Sdílet</string>
+    <string name="open_with">Otevřít v…</string>
+    <string name="download">Stáhnout</string>
+    <string name="pdf_document">PDF dokument</string>
+    <string name="print">Tisknout</string>
+    <string name="download_successful">Stahování dokončeno</string>
+    <string name="download_error">Při stahování nastala chyba</string>
+</resources>

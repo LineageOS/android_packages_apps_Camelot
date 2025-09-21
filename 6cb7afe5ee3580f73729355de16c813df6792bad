@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "65c0bcbb_3fef18b3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-09-21T09:11:01Z",
+      "side": 1,
+      "message": "Broken as fuck, everything got re-written in the lib",
+      "revId": "6cb7afe5ee3580f73729355de16c813df6792bad",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

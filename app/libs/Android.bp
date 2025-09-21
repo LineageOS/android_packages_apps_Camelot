@@ -8,7 +8,7 @@
 android_library_import {
     name: "Camelot_androidx.pdf_pdf-document-service",
     aars: ["androidx/pdf/pdf-document-service/1.0.0-alpha08/pdf-document-service-1.0.0-alpha08.aar"],
-    sdk_version: "35",
+    sdk_version: "36",
     min_sdk_version: "35",
     apex_available: [
         "//apex_available:platform",
@@ -24,7 +24,7 @@ android_library_import {
 android_library_import {
     name: "Camelot_androidx.pdf_pdf-viewer",
     aars: ["androidx/pdf/pdf-viewer/1.0.0-alpha08/pdf-viewer-1.0.0-alpha08.aar"],
-    sdk_version: "35",
+    sdk_version: "36",
     min_sdk_version: "35",
     apex_available: [
         "//apex_available:platform",
@@ -45,7 +45,7 @@ android_library_import {
 android_library_import {
     name: "Camelot_androidx.pdf_pdf-viewer-fragment",
     aars: ["androidx/pdf/pdf-viewer-fragment/1.0.0-alpha08/pdf-viewer-fragment-1.0.0-alpha08.aar"],
-    sdk_version: "35",
+    sdk_version: "36",
     min_sdk_version: "35",
     apex_available: [
         "//apex_available:platform",

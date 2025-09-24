@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2024-2025 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">מציג PDF</string>
+    <string name="find_in_page">חיפוש בדף</string>
+    <string name="share">שיתוף</string>
+    <string name="open_with">פתיחה באמצעות…</string>
+    <string name="download">הורדה</string>
+    <string name="pdf_document">מסמך PDF</string>
+    <string name="print">הדפסה</string>
+    <string name="download_successful">ההורדה הושלמה</string>
+    <string name="download_error">שגיאה בעת הורדת הקובץ</string>
+</resources>

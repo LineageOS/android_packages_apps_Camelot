@@ -15,8 +15,8 @@ android_library_import {
         "//apex_available:anyapex",
     ],
     static_libs: [
-        "Camelot_androidx.pdf_pdf-viewer",
         "androidx.core_core",
+        "Camelot_androidx.pdf_pdf-viewer",
         "kotlin-stdlib",
     ],
 }
@@ -52,10 +52,10 @@ android_library_import {
         "//apex_available:anyapex",
     ],
     static_libs: [
-        "Camelot_androidx.pdf_pdf-document-service",
-        "Camelot_androidx.pdf_pdf-viewer",
         "androidx.core_core",
         "androidx.fragment_fragment-ktx",
+        "Camelot_androidx.pdf_pdf-document-service",
+        "Camelot_androidx.pdf_pdf-viewer",
         "com.google.android.material_material",
         "kotlin-stdlib",
     ],

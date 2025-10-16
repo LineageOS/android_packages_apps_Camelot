@@ -4,6 +4,7 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
+    <string name="share">Bagikan</string>
     <string name="open_with">Buka dengan...</string>
     <string name="download">Unduh</string>
     <string name="pdf_document">Dokumen PDF</string>

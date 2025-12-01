@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2024-2025 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">PDF-წამკითხველი</string>
+    <string name="find_in_page">პოვნა გვერდზე</string>
+    <string name="share">გაზიარება</string>
+    <string name="open_with">გახსნა პროგრამით…</string>
+    <string name="download">ჩამოტვირთვა</string>
+    <string name="pdf_document">PDF-დოკუმენტი</string>
+    <string name="print">ამობეჭდვა</string>
+    <string name="download_successful">ჩამოიტვირთა წარმატებით</string>
+    <string name="download_error">შეცდომა წარმოიშვა ჩამოტვირთვისას</string>
+</resources>

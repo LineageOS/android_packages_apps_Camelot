@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2024-2025 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">Visualizadore PDF</string>
+    <string name="find_in_page">Agata in sa pàgina</string>
+    <string name="share">Cumpartzi</string>
+    <string name="open_with">Aberi cun…</string>
+    <string name="download">Iscàrriga</string>
+    <string name="pdf_document">Documentu PDF</string>
+    <string name="print">Imprenta</string>
+    <string name="download_successful">Iscarrigamentu cumpletadu</string>
+    <string name="download_error">Errore in s\'iscarrigamentu de s\'archìviu</string>
+</resources>

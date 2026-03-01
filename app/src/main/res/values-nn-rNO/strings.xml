@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2024-2025 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">PDF-visar</string>
+    <string name="find_in_page">Finn på sida</string>
+    <string name="share">Del</string>
+    <string name="open_with">Opna med …</string>
+    <string name="download">Lasta ned</string>
+    <string name="pdf_document">PDF-dokument</string>
+    <string name="print">Skriv ut</string>
+    <string name="download_successful">Nedlastinga er ferdig</string>
+    <string name="download_error">Klarte ikkje lasta ned fila</string>
+</resources>

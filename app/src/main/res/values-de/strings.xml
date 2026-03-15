@@ -6,8 +6,10 @@
 <resources>
     <string name="app_name">PDF-Viewer</string>
     <string name="find_in_page">Seite durchsuchen</string>
+    <string name="share">Teilen</string>
     <string name="open_with">Öffnen mit …</string>
     <string name="download">Herunterladen</string>
     <string name="pdf_document">PDF-Dokument</string>
     <string name="print">Drucken</string>
+    <string name="download_successful">Erfolgreich heruntergeladen</string>
 </resources>

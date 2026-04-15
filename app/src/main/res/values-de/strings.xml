@@ -12,4 +12,5 @@
     <string name="pdf_document">PDF-Dokument</string>
     <string name="print">Drucken</string>
     <string name="download_successful">Erfolgreich heruntergeladen</string>
+    <string name="download_error">Fehler beim Herunterladen der Datei</string>
 </resources>

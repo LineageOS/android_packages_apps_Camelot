@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2024-2025 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">کامێرا</string>
+    <string name="find_in_page">گەڕان لە پەڕەدا</string>
+    <string name="share">بڵاوکردنەوە</string>
+    <string name="open_with">کردنەوە لەگەڵ\u2026</string>
+    <string name="download">داگرتن</string>
+    <string name="pdf_document">بەڵگەی PDF</string>
+    <string name="print">چاپکردن</string>
+    <string name="download_successful">داگرتن سەرکەوتوو بوو</string>
+    <string name="download_error">هەڵەیەک ڕوویدا لە کاتی داگرتنی پەڕگەکەدا</string>
+</resources>

@@ -5,12 +5,12 @@
 -->
 <resources>
     <string name="app_name">PDF காணி</string>
-    <string name="find_in_page">பக்கத்தில் கண்டறிக</string>
-    <string name="share">பகிர்க</string>
-    <string name="open_with">இதன்மூலம் திறக்க</string>
-    <string name="download">பதிவிறக்குக</string>
+    <string name="find_in_page">பக்கத்தில் தேடு</string>
+    <string name="share">பகிர்</string>
+    <string name="open_with">இதனுடன் திற</string>
+    <string name="download">இறக்கு</string>
     <string name="pdf_document">PDF ஆவணம்</string>
-    <string name="print">அச்சிடுக</string>
-    <string name="download_successful">பதிவிறக்கம் வெற்றி</string>
-    <string name="download_error">கோப்பைப் பதிவிறக்கும்போது, பிழை ஏற்பட்டது</string>
+    <string name="print">அச்சிடு</string>
+    <string name="download_successful">இறக்கமுற்றது</string>
+    <string name="download_error">கோப்பு இறக்கப்பிழை</string>
 </resources>
